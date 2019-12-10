@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Text, ScrollView } from 'react-native';
+import { Text, ScrollView, FlatList, View } from 'react-native';
 import PropTypes from 'prop-types';
 import Message from '../message/message';
 import styles from './styles';
@@ -13,32 +13,31 @@ class MessageList extends Component {
     render() {
       const { room, userId } = this.props;
       return (
-        <ScrollView
+        <View
           style={styles.messageListContainer}
-          ref={ref => this.scrollView = ref}
-          onContentSizeChange={(contentWidth, contentHeight) => {
-            this.scrollView.scrollToEnd({ animated: true });
-          }}
         >
-          {
-            room
-              ? room.Messages.map((msg, i, messageList) => (
-                <Message
-                  key={msg.id}
-                  user={msg.SenderId === userId}
-                  isShowImage={
-                    messageList[i + 1]
-                      ? msg.SenderId === messageList[i + 1].SenderId
-                      : null
-                  }
-                  message={msg}
-                  sender={room.Users[msg.SenderId]}
-                  navigation={this.props.navigation}
-                />
-              ))
-              : <Text>Loading...</Text>
-            }
-        </ScrollView>
+          <FlatList 
+            data={room.Messages}
+            renderItem={({ item, index }) => (
+              <Message
+                key={item.id}
+                user={item.SenderId === userId}
+                isShowImage={
+                  room.Messages[index + 1]
+                  ? item.SenderId === room.Messages[index + 1].SenderId
+                  : null
+                }
+                message={item}
+                sender={room.Users[item.SenderId]}
+                navigation={this.props.navigation}
+              />
+            )}
+            keyExtractor={(item) => item.id}
+            extraData={room.Messages}
+            ref={ref => this.flatList = ref}
+            onLayout={() => this.flatList.scrollToEnd({animated: false})}
+          />
+        </View>
       );
     }
 }

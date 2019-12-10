@@ -25,7 +25,10 @@ module.exports = {
       "react/jsx-filename-extension": [1, { "extensions": [".js", ".jsx"] }],
       "react/prefer-stateless-function": [0, { "ignorePureComponents": true }],
       "react/destructuring-assignment": [0, 'never'],
-      "react/static-property-placement": [0]
+      "react/static-property-placement": [0],
+      "react/jsx-props-no-spreading": [{ 
+        "explicitSpread": "ignore" 
+        }]
   },
   "parser": "babel-eslint",
 };

@@ -1,5 +1,7 @@
+import { HOST } from 'react-native-dotenv';
+
 export default function request(pathname, method, data) {
-  return fetch(`http://localhost:3030/api/${pathname}`, {
+  return fetch(`http://${HOST}:3030/api/${pathname}`, {
     method: `${method}`,
     headers: {
       'Content-Type': 'application/json',

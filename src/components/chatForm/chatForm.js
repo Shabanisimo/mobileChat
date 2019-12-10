@@ -28,6 +28,7 @@ export default class ChatForm extends Component {
     this.props.onSendMessage(this.state.messageText);
     this.setState({
       messageText: '',
+      isShowButton: false
     });
   }
 

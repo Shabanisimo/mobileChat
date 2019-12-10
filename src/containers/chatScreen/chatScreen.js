@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MessageList from '../../components/messageList/messageList';
@@ -34,9 +34,11 @@ class ChatScreen extends Component {
       const { roomList, userId } = this.props;
       const roomId = this.props.navigation.getParam('roomId');
       return (
-        <KeyboardAvoidingView style={styles.chatScreen}>
-          <MessageList style={styles.messageList} room={roomList[roomId]} userId={userId} navigation={this.props.navigation} />
-          <ChatForm onSendMessage={this.onSendMessage} />
+        <KeyboardAvoidingView >
+          <SafeAreaView style={styles.chatScreen}>
+            <MessageList room={roomList[roomId]} userId={userId} navigation={this.props.navigation} />
+            <ChatForm onSendMessage={this.onSendMessage} />
+          </SafeAreaView>
         </KeyboardAvoidingView>
       );
     }

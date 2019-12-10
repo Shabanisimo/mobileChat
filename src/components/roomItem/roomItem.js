@@ -1,26 +1,9 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import PropTypes from 'prop-types';
 import { Text, TouchableRipple } from 'react-native-paper';
 import Image from '../image/image';
-
-const styles = StyleSheet.create({
-  roomItem: {
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    paddingTop: 7,
-    paddingBottom: 7,
-    paddingLeft: 15,
-    borderColor: '#ececec',
-    borderBottomWidth: 0.4,
-  },
-  roomTitle: {
-    marginLeft: 10,
-    fontSize: 18,
-    fontWeight: '700',
-  },
-});
+import styles from './styles';
 
 export default class RoomItem extends Component {
   static propTypes = {

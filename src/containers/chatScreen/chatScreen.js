@@ -1,23 +1,12 @@
 import React, { Component } from 'react';
-import { StyleSheet, KeyboardAvoidingView } from 'react-native';
+import { KeyboardAvoidingView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import MessageList from '../../components/messageList/messageList';
 import ChatForm from '../../components/chatForm/chatForm';
 import { sendMessage } from '../../store/actions/socket';
 import ChatHeader from '../../components/customHeader/chatHeader';
-
-const styles = StyleSheet.create({
-  chatScreen: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: '100%',
-    backgroundColor: '#d8e4f4',
-  },
-  messageList: {
-    height: 665,
-  },
-});
+import styles from './styles';
 
 class ChatScreen extends Component {
     static navigationOptions = ({ navigation }) => ({

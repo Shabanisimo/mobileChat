@@ -1,21 +1,7 @@
 import React from 'react';
-import { Text, View, StyleSheet } from 'react-native';
+import { Text, View } from 'react-native';
 import Image from '../image/image';
-
-const styles = StyleSheet.create({
-  header: {
-    display: 'flex',
-    flexDirection: 'row',
-    justifyContent: 'center',
-    alignItems: 'center',
-  },
-  title: {
-    fontSize: 20,
-    fontWeight: 'bold',
-    marginLeft: 10,
-    textAlign: 'center',
-  },
-});
+import { chatHeader as styles } from './styles';
 
 const ChatHeader = ({ title, imgUrl }) => (
   <View style={styles.header}>

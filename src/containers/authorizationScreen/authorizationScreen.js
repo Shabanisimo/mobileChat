@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
-import { View, StyleSheet, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import PropTypes from 'prop-types';
 import { TextInput, Button, HelperText } from 'react-native-paper';
 import { connect } from 'react-redux';
-import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import { asyncAuthorization } from '../../store/actions/user';
 import { emailValid, stringValid } from '../../utils/validation';
-
-const styles = StyleSheet.create({
-  authForm: {
-    padding: 10,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    height: '100%',
-    borderColor: '#000000',
-  },
-  authBtn: {
-    marginTop: 10,
-  },
-});
+import styles from './styles';
 
 class AuthorizationScreen extends Component {
   static navigationOptions = {
@@ -114,6 +101,7 @@ class AuthorizationScreen extends Component {
           value={email}
           onChangeText={this.onChangeEmail}
           error={emailValid}
+          type={email}
           mode="outlined"
         />
         <HelperText
@@ -127,6 +115,7 @@ class AuthorizationScreen extends Component {
           value={password}
           onChangeText={this.onChangePassword}
           error={passwordValid}
+          type={password}
           mode="outlined"
           secureTextEntry
         />

@@ -1,34 +1,14 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { Text } from 'react-native-paper';
 import MaterialIcons from 'react-native-vector-icons/MaterialIcons';
 import { HeaderButtons, HeaderButton, Item } from 'react-navigation-header-buttons';
 import Image from '../image/image';
+import { userHeader as styles } from './styles';
 
 const IoniconsHeaderButton = (passMeFurther) => (
   <HeaderButton {...passMeFurther} IconComponent={MaterialIcons} iconSize={23} color="black" />
 );
-
-const styles = StyleSheet.create({
-  headerContainer: {
-    display: 'flex',
-  },
-  userInfoBlock: {
-    width: '100%',
-    display: 'flex',
-    flexDirection: 'row',
-    alignItems: 'center',
-    marginTop: 30,
-    paddingLeft: 15,
-  },
-  userInfo: {
-    marginLeft: 15,
-  },
-  userName: {
-    fontSize: 20,
-    fontWeight: '700',
-  },
-});
 
 class UserHeader extends Component {
   render() {

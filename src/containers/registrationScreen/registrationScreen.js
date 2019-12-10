@@ -1,25 +1,12 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
-import { View, StyleSheet, Alert } from 'react-native';
+import { Alert } from 'react-native';
 import { TextInput, Button, HelperText } from 'react-native-paper';
-import GestureRecognizer, { swipeDirections } from 'react-native-swipe-gestures';
+import GestureRecognizer from 'react-native-swipe-gestures';
 import { asyncRegistration } from '../../store/actions/user';
 import { emailValid, stringValid } from '../../utils/validation';
-
-const styles = StyleSheet.create({
-  regForm: {
-    padding: 10,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-    height: '100%',
-    borderColor: '#000000',
-  },
-  regBtn: {
-    marginTop: 10,
-  },
-});
+import styles from './styles';
 
 class RegistrationScreen extends Component {
     static navigationOptions = {

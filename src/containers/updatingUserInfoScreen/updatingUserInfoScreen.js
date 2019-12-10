@@ -1,21 +1,10 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { TextInput, Button, HelperText } from 'react-native-paper';
 import { connect } from 'react-redux';
 import { emailValid, stringValid } from '../../utils/validation';
 import { updateUserInfo } from '../../store/actions/user';
-
-const styles = StyleSheet.create({
-  updateForm: {
-    padding: 10,
-    flex: 1,
-    justifyContent: 'center',
-    alignItems: 'stretch',
-  },
-  updateBtn: {
-    marginTop: 10,
-  },
-});
+import styles from './styles';
 
 class UpdatingUserInfoScreen extends Component {
   constructor() {

@@ -1,37 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { Text, Switch } from 'react-native-paper';
 import { connect } from 'react-redux';
 import { DrawerItems, SafeAreaView } from 'react-navigation';
 import { ScrollView } from 'react-native-gesture-handler';
 import Image from '../image/image';
-
-const styles = StyleSheet.create({
-  drawer: {
-    flex: 1,
-  },
-  drawerHeader: {
-    height: 150,
-    backgroundColor: '#d8e4f4',
-  },
-  drawerHeaderInner: {
-    marginTop: 20,
-    marginLeft: 20,
-  },
-  drawerUserInfo: {
-    marginTop: 20,
-  },
-  drawerUserName: {
-    fontWeight: '700',
-    color: '#ffffff',
-  },
-  drawerUserEmail: {
-    color: '#ffffff',
-  },
-  chatModeSwitcherContainer: {
-    display: 'flex',
-  },
-});
+import styles from './styles';
 
 class DrawerNavigator extends Component {
   constructor() {

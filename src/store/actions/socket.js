@@ -23,7 +23,7 @@ export const addSocket = () => (dispatch, getState) => {
   if (!socketConnect) {
     getItemFromStorage('token')
       .then((token) => {
-        const socket = io.connect('http://192.168.1.255:3030');
+        const socket = io.connect('http://localhost:3030');
 
         socket.on('connect', () => {
           socket.emit('conn', { token });

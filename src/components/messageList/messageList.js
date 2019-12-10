@@ -1,14 +1,9 @@
 import React, { Component } from 'react';
-import { Text, ScrollView, StyleSheet } from 'react-native';
+import { Text, ScrollView } from 'react-native';
 import PropTypes from 'prop-types';
 import Message from '../message/message';
+import styles from './styles';
 
-const styles = StyleSheet.create({
-  messageListContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-  },
-});
 class MessageList extends Component {
     static propTypes = {
       room: PropTypes.object.isRequired,

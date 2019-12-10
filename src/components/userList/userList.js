@@ -1,16 +1,9 @@
 import React, { Component } from 'react';
 import {
-  ScrollView, View, Text, StyleSheet,
+  ScrollView, View, Text
 } from 'react-native';
 import UserItem from '../userItem/userItem';
-
-const styles = StyleSheet.create({
-  userListContainer: {
-    display: 'flex',
-    flexDirection: 'column',
-    height: 620,
-  },
-});
+import styles from './styles';
 
 export default class UserList extends Component {
   render() {

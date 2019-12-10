@@ -1,27 +1,7 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
-import { TextInput, IconButton, Colors } from 'react-native-paper';
-import { throwStatement } from '@babel/types';
-
-const styles = StyleSheet.create({
-  chatForm: {
-    display: 'flex',
-    flexDirection: 'row',
-    width: '100%',
-    alignItems: 'flex-end',
-    backgroundColor: '#ffffff',
-  },
-  chatInput: {
-    flex: 1,
-    maxHeight: 150,
-    height: 50,
-    width: '100%',
-    backgroundColor: 'transparent',
-  },
-  chatButton: {
-    backgroundColor: 'transparent',
-  },
-});
+import { View } from 'react-native';
+import { TextInput, IconButton } from 'react-native-paper';
+import styles from './styles';
 
 export default class ChatForm extends Component {
   constructor() {

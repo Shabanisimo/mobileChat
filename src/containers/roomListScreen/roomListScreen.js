@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import {
-  View, ScrollView, Text, StyleSheet,
+  View, ScrollView, Text,
 } from 'react-native';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
@@ -11,19 +11,11 @@ import { asyncAddRoomList, asyncLoadRoomInfo } from '../../store/actions/room';
 import { addSocket } from '../../store/actions/socket';
 import { asyncGetUserInfo } from '../../store/actions/user';
 import RoomItem from '../../components/roomItem/roomItem';
+import styles from './styles';
 
 const IoniconsHeaderButton = passMeFurther => (
   <HeaderButton {...passMeFurther} IconComponent={MaterialIcons} iconSize={23} color="black" />
 );
-
-const styles = StyleSheet.create({
-  roomListContainer: {
-    display: 'flex',
-    flex: 1,
-    height: '100%',
-    flexDirection: 'column',
-  },
-});
 
 class RoomListScreen extends Component {
     static navigationOptions = ({ navigation }) => {

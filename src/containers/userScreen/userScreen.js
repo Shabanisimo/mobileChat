@@ -1,22 +1,10 @@
 import React, { Component } from 'react';
-import { View, Linking, StyleSheet } from 'react-native';
+import { View, Linking } from 'react-native';
 import {
   Surface, List,
 } from 'react-native-paper';
 import UserHeader from '../../components/customHeader/userHeader';
-
-const styles = StyleSheet.create({
-  userScreenContainer: {
-    flex: 1,
-    alignItems: 'flex-start',
-    width: '100%',
-    backgroundColor: '#f0f0f0',
-  },
-  userScreenUserInfoBlock: {
-    width: '100%',
-    elevation: 1,
-  },
-});
+import styles from './styles';
 
 export default class UserScreen extends Component {
   static navigationOptions = ({ navigation }) => {

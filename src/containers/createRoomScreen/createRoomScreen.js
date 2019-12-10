@@ -1,18 +1,11 @@
 import React, { Component } from 'react';
-import { View, StyleSheet } from 'react-native';
+import { View } from 'react-native';
 import { connect } from 'react-redux';
 import CreateRoomForm from '../../components/createRoomForm/createRoomForm';
 import { asyncLoadUserList } from '../../store/actions/userList';
 import { asyncCreateRoom } from '../../store/actions/room';
+import styles from './styles';
 
-const styles = StyleSheet.create({
-  createRoomScreenContainer: {
-    flex: 1,
-    display: 'flex',
-    justifyContent: 'flex-start',
-    height: '100%',
-  },
-});
 class CreateRoomScreen extends Component {
   static navigationOptions = ({ navigation }) => {
     const params = navigation.state.params || {};

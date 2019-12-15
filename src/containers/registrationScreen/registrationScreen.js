@@ -74,11 +74,12 @@ class RegistrationScreen extends Component {
       this.setState({
         auth: true,
       });
+      const { name, surname, email, password } = this.state;
       this.props.asyncRegistration(
-        this.state.name,
-        this.state.surname,
-        this.state.email,
-        this.state.password,
+        name,
+        surname,
+        email,
+        password,
       )
         .then((res) => {
           if (res) {
@@ -97,12 +98,6 @@ class RegistrationScreen extends Component {
             );
           }
         });
-    }
-
-    onSwipeRight(gestureState) {
-      const { navigation } = this.props;
-
-      navigation.navigate('Authorization');
     }
 
     render() {

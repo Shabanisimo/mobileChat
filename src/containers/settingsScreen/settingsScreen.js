@@ -34,7 +34,12 @@ class SettingsScreen extends Component {
       userInfo: {
         imgUrl, name, surname,
       },
-    } = this.props;
+    } = this.props; 
+    navigation.setParams('userInfo', {
+      imgUrl,
+      name,
+      surname,
+    })
     navigation.setParams({
       userInfo: {
         imgUrl, name, surname,
@@ -67,6 +72,11 @@ class SettingsScreen extends Component {
               title="Change user info"
               left={props => <MaterialIcons {...props} name="pen" style={{ fontSize: 24 }} />}
               onPress={() => navigation.navigate('UpdatingUserInfoScreen')}
+            />
+            <List.Item 
+              title="Upload image"
+              left={props => <MaterialIcons {...props} name="camera" style={{ fontSize: 24 }} />}
+              onPress={() => navigation.navigate('UploadUserImage')}
             />
             <List.Item
               title="Log Out"

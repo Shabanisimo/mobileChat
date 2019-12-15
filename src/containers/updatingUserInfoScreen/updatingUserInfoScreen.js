@@ -121,6 +121,7 @@ class UpdatingUserInfoScreen extends Component {
         >
             Email is not correct!
         </HelperText>
+        <Button mode="text">Pick a photo</Button>
         <Button
           style={styles.updateBtn}
           mode="contained"

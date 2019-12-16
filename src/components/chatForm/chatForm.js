@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
-import { View } from 'react-native';
-import { TextInput, IconButton } from 'react-native-paper';
+import { View, TextInput } from 'react-native';
+import { IconButton } from 'react-native-paper';
 import styles from './styles';
 
 export default class ChatForm extends Component {
@@ -42,6 +42,7 @@ export default class ChatForm extends Component {
           onChangeText={this.onChangeInput}
           value={this.state.messageText}
           underlineColorAndroid="#ffffff"
+          onFocus={() => { console.log('input')}}
         />
         {
           this.state.isShowButton

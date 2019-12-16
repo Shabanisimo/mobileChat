@@ -57,7 +57,7 @@ class UpdatingUserInfoScreen extends Component {
   }
 
   onUpdateUserInfo() {
-    const { updateUserInfo } = this.props;
+    const { updateUserInfo, navigation, userInfo: { imgUrl } } = this.props;
     const { name, surname, email } = this.state;
     this.setState({
       auth: true,
@@ -68,7 +68,7 @@ class UpdatingUserInfoScreen extends Component {
       email,
     )
       .then(() => {
-        this.props.navigation.navigate('SettingsScreen');
+        navigation.navigate('SettingsScreen', { userInfo: { name, surname, imgUrl } });
         this.setState({
           auth: false,
         });
@@ -121,7 +121,6 @@ class UpdatingUserInfoScreen extends Component {
         >
             Email is not correct!
         </HelperText>
-        <Button mode="text">Pick a photo</Button>
         <Button
           style={styles.updateBtn}
           mode="contained"

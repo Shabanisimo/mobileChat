@@ -70,7 +70,7 @@ class SettingsScreen extends Component {
             <List.Subheader>Settings</List.Subheader>
             <List.Item
               title="Change user info"
-              left={props => <MaterialIcons {...props} name="pen" style={{ fontSize: 24 }} />}
+              left={props => <MaterialIcons {...props} name="account-settings" style={{ fontSize: 24 }} />}
               onPress={() => navigation.navigate('UpdatingUserInfoScreen')}
             />
             <List.Item 

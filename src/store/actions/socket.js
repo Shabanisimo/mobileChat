@@ -37,6 +37,7 @@ export const addSocket = () => (dispatch, getState) => {
         socket.on('addRoom', (room) => {
           const newRoom = {};
           const { roomInfo, Users } = room;
+          console.log(roomInfo.id)
           newRoom[roomInfo.id] = { ...roomInfo };
           newRoom[roomInfo.id].Messages = [];
           newRoom[roomInfo.id].Users = [...Users];

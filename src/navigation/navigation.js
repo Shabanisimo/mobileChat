@@ -16,7 +16,7 @@ import SettingsScreen from '../containers/settingsScreen/settingsScreen';
 import CreateRoomScreen from '../containers/createRoomScreen/createRoomScreen';
 import DrawerNavigator from '../components/drawerNavigation/drawerNavigation';
 import UpdatingUserInfoScreen from '../containers/updatingUserInfoScreen/updatingUserInfoScreen';
-import UploadUserImage from '../containers/uploadUserImage/uploadUserImage';
+import UploadUserImage from '../containers/uploadUserImageScreen/uploadUserImageScreen';
 import UserScreen from '../containers/userScreen/userScreen';
 
 const noLoginStackNavigator = createStackNavigator(

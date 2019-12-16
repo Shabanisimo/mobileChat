@@ -4,9 +4,10 @@ const styles = StyleSheet.create({
   chatForm: {
     display: 'flex',
     flexDirection: 'row',
-    width: '100%',
     alignItems: 'flex-end',
     backgroundColor: '#ffffff',
+    borderWidth: 1,
+    borderColor: 'black'
   },
   chatInput: {
     flex: 1,

@@ -2,11 +2,11 @@ import React, { Component } from 'react';
 import { KeyboardAvoidingView, SafeAreaView } from 'react-native';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
-import MessageList from '../../components/messageList/messageList';
-import ChatForm from '../../components/chatForm/chatForm';
 import { sendMessage } from '../../store/actions/socket';
 import ChatHeader from '../../components/customHeader/chatHeader';
 import styles from './styles';
+import ChatContainer from "../../components/chatContainer/chatContainer";
+import MessageList from "../../components/messageList/messageList";
 
 class ChatScreen extends Component {
     static navigationOptions = ({ navigation }) => ({
@@ -34,10 +34,14 @@ class ChatScreen extends Component {
       const { roomList, userId } = this.props;
       const roomId = this.props.navigation.getParam('roomId');
       return (
-        <KeyboardAvoidingView >
-          <SafeAreaView style={styles.chatScreen}>
-            <MessageList room={roomList[roomId]} userId={userId} navigation={this.props.navigation} />
-            <ChatForm onSendMessage={this.onSendMessage} />
+        <KeyboardAvoidingView style={styles.chatScreen} >
+          <SafeAreaView>
+            <ChatContainer
+              room={roomList[roomId]}
+              userId={userId}
+              navigation={this.props.navigation}
+              onSendMessage={this.onSendMessage}
+            />
           </SafeAreaView>
         </KeyboardAvoidingView>
       );

@@ -25,6 +25,7 @@ export const asyncAddRoomList = () => (dispatch) => {
     .then((token) => {
       request('room/getList', 'POST', { token })
         .then((data) => {
+          console.log(data);
           const roomListObj = {};
           data.forEach((room) => {
             roomListObj[room.id] = { ...room };
